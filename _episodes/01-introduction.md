@@ -1,13 +1,15 @@
 ---
 title: "Introduction"
-teaching: 0
+teaching: 15
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "What is programming?"
+- "How to document code?"
+- "Finding resources/code online"
 objectives:
-- "First learning objective. (FIXME)"
+- "identify basic concepts in programming"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- 
 ---
 FIXME
 
