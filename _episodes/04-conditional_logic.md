@@ -8,7 +8,7 @@ objectives:
 - "compare values"
 - "use logical statements to allow for decision-based operations in code"
 keypoints:
-- 
+- ""
 ---
 FIXME
 
