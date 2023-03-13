@@ -4,7 +4,7 @@ teaching: 30
 exercises: 0
 questions:
 - "How can I store many values together?"
-- "How can I create a list succinctly?
+- "How can I create a list succinctly?"
 - "How can I efficiently access nested data?"
 objectives:
 - "identify and create lists and dictionaries"
