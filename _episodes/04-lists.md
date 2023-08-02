@@ -318,7 +318,6 @@ lettuce
 In general, however, when we are analysing a large collection of values, the best practice is 
 to structure those values in columns and rows as a tabular Pandas data frame object. 
 This is covered in another Carpentries Course called [Python for Social Sciences](https://datacarpentry.org/python-socialsci/08-Pandas.html).
-({{ page.root }}{% link _episodes/03-data_transformation.md %}).    
 
 Lists are still incredibly versatile and useful when you have a collection of values that need to 
 be efficiently accessed or transformed. For example, data frame column names are 
