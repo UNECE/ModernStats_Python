@@ -154,28 +154,14 @@ Matplotlib from the file name ending we specify; here PNG from
 'inflammation.png'. Matplotlib supports many different graphics
 formats, including SVG, PDF, and JPEG.
 
-:::::::::::::::::::::::::::::::::::::::::  callout
-
-
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
 ## Plot Scaling
 
 Why do all of our plots stop just short of the upper end of our graph?
 
-:::::::::::::::  solution
-
-## Solution
+### Solution
 
 Because matplotlib normally sets x and y axes limits to the min and max of our data
 (depending on data range)
-
-
-:::::::::::::::::::::::::
 
 If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes',
 for example:
@@ -188,10 +174,6 @@ axes3.set_ylim(0,6)
 Update your plotting code to automatically set a more appropriate scale.
 (Hint: you can make use of the `max` and `min` methods to help.)
 
-:::::::::::::::  solution
-
-## Solution
-
 ~~~
 # One method
 axes3.set_ylabel('min')
@@ -199,12 +181,6 @@ axes3.plot(np.amin(data, axis=0))
 axes3.set_ylim(0,6)
 ~~~
 {: .language-python}
-
-:::::::::::::::::::::::::
-
-:::::::::::::::  solution
-
-## Solution
 
 ~~~
 # A more automated approach
@@ -215,12 +191,6 @@ axes3.set_ylim(np.amin(min_data), np.amax(min_data) * 1.1)
 ~~~
 {: .language-python}
 
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
 ## Drawing Straight Lines
 
 In the center and right subplots above, we expect all lines to look like step functions because
@@ -228,9 +198,7 @@ non-integer value are not realistic for the minimum and maximum values. However,
 that the lines are not always vertical or horizontal, and in particular the step function
 in the subplot on the right looks slanted. Why is this?
 
-:::::::::::::::  solution
-
-## Solution
+### Solution
 
 Because matplotlib interpolates (draws a straight line) between the points.
 One way to do avoid this is to use the Matplotlib `drawstyle` option:
@@ -264,22 +232,12 @@ plt.show()
 
 ![Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.](../fig/09-line-styles.svg)
 
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
 ## Make Your Own Plot
 
 Create a plot showing the standard deviation (`np.std`)
 of the inflammation data for each day across all patients.
 
-:::::::::::::::  solution
-
-## Solution
+### Solution
 
 ~~~
 std_plot = plt.plot(np.std(data, axis=0))
@@ -287,20 +245,12 @@ plt.show()
 ~~~
 {: .language-python}
 
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
 ## Moving Plots Around
 
 Modify the program to display the three plots on top of one another
 instead of side by side.
 
-:::::::::::::::  solution
-
-## Solution
+### Solution
 
 ~~~
 import numpy as np
