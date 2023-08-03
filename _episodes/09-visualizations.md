@@ -29,16 +29,16 @@ have a `data` variable and have imported `numpy`.  If you are starting a new
 notebook at this point, you need the following two lines:
 
 ~~~
-import numpy
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+import numpy as np
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
 
 ~~~
-import matplotlib.pyplot
-image = matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show()
+import matplotlib.pyplot as plt
+image = plt.imshow(data)
+plt.show()
 ~~~
 {: .language-python}
 
@@ -59,31 +59,31 @@ claims:
 Now let's take a look at the average inflammation over time:
 
 ~~~
-ave_inflammation = numpy.mean(data, axis=0)
-ave_plot = matplotlib.pyplot.plot(ave_inflammation)
-matplotlib.pyplot.show()
+ave_inflammation = np.mean(data, axis=0)
+ave_plot = plt.plot(ave_inflammation)
+plt.show()
 ~~~
 {: .language-python}
 
 ![A line graph showing the average inflammation across all patients over a 40-day period.](../fig/09-average.svg)
 
 Here, we have put the average inflammation per day across all patients in the variable
-`ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those
+`ave_inflammation`, then asked `plt` to create and display a line graph of those
 values.  The result is a reasonably linear rise and fall, in line with Dr. Maverick's claim that
 the medication takes 3 weeks to take effect.  But a good data scientist doesn't just consider the
 average of a dataset, so let's have a look at two other statistics:
 
 ~~~
-max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis=0))
-matplotlib.pyplot.show()
+max_plot = plt.plot(np.amax(data, axis=0))
+plt.show()
 ~~~
 {: .language-python}
 
 ![A line graph showing the maximum inflammation across all patients over a 40-day period.](../fig/09-maximum.svg)
 
 ~~~
-min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis=0))
-matplotlib.pyplot.show()
+min_plot = plt.plot(np.amin(data, axis=0))
+plt.show()
 ~~~
 {: .language-python}
 
@@ -97,7 +97,7 @@ the numbers themselves without visualization tools.
 ### Grouping plots
 
 You can group similar plots in a single figure using subplots.
-This script below uses a number of new commands. The function `matplotlib.pyplot.figure()`
+This script below uses a number of new commands. The function `plt.figure()`
 creates a space into which we will place all of our plots. The parameter `figsize`
 tells Python how big to make this space. Each subplot is placed into the figure using
 its `add_subplot` [method](../reference.md#method). The `add_subplot` method takes
@@ -109,30 +109,30 @@ be titled using the `set_xlabel()` command (or `set_ylabel()`).
 Here are our three plots side by side:
 
 ~~~
-import numpy
-import matplotlib.pyplot
+import numpy as np
+import matplotlib.pyplot as plt
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+fig = plt.figure(figsize=(10.0, 3.0))
 
 axes1 = fig.add_subplot(1, 3, 1)
 axes2 = fig.add_subplot(1, 3, 2)
 axes3 = fig.add_subplot(1, 3, 3)
 
 axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0))
+axes1.plot(np.mean(data, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0))
+axes2.plot(np.amax(data, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
+axes3.plot(np.amin(data, axis=0))
 
 fig.tight_layout()
 
-matplotlib.pyplot.savefig('inflammation.png')
-matplotlib.pyplot.show()
+plt.savefig('inflammation.png')
+plt.show()
 ~~~
 {: .language-python}
 
@@ -156,26 +156,7 @@ formats, including SVG, PDF, and JPEG.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Importing libraries with shortcuts
 
-In this lesson we use the `import matplotlib.pyplot`
-[syntax](../reference.md#syntax)
-to import the `pyplot` module of `matplotlib`. However, shortcuts such as
-`import matplotlib.pyplot as plt` are frequently used.
-Importing `pyplot` this way means that after the initial import, rather than writing
-`matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`.
-Another common convention is to use the shortcut `import numpy as np` when importing the
-NumPy library. We then can write `np.loadtxt(...)` instead of `numpy.loadtxt(...)`,
-for example.
-
-Some people prefer these shortcuts as it is quicker to type and results in shorter
-lines of code - especially for libraries with long names! You will frequently see
-Python code online using a `pyplot` function with `plt`, or a NumPy function with
-`np`, and it's because they've used this shortcut. It makes no difference which
-approach you choose to take, but you must be consistent as if you use
-`import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and
-you must use `plt.plot(...)` instead. Because of this, when working with other people it
-is important you agree on how libraries are imported.
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -214,7 +195,7 @@ Update your plotting code to automatically set a more appropriate scale.
 ~~~
 # One method
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
+axes3.plot(np.amin(data, axis=0))
 axes3.set_ylim(0,6)
 ~~~
 {: .language-python}
@@ -227,10 +208,10 @@ axes3.set_ylim(0,6)
 
 ~~~
 # A more automated approach
-min_data = numpy.amin(data, axis=0)
+min_data = np.amin(data, axis=0)
 axes3.set_ylabel('min')
 axes3.plot(min_data)
-axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
+axes3.set_ylim(np.amin(min_data), np.amax(min_data) * 1.1)
 ~~~
 {: .language-python}
 
@@ -255,29 +236,29 @@ Because matplotlib interpolates (draws a straight line) between the points.
 One way to do avoid this is to use the Matplotlib `drawstyle` option:
 
 ~~~
-import numpy
-import matplotlib.pyplot
+import numpy as np
+import matplotlib.pyplot as plt
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
-fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+fig = plt.figure(figsize=(10.0, 3.0))
 
 axes1 = fig.add_subplot(1, 3, 1)
 axes2 = fig.add_subplot(1, 3, 2)
 axes3 = fig.add_subplot(1, 3, 3)
 
 axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
+axes1.plot(np.mean(data, axis=0), drawstyle='steps-mid')
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0), drawstyle='steps-mid')
+axes2.plot(np.amax(data, axis=0), drawstyle='steps-mid')
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0), drawstyle='steps-mid')
+axes3.plot(np.amin(data, axis=0), drawstyle='steps-mid')
 
 fig.tight_layout()
 
-matplotlib.pyplot.show()
+plt.show()
 ~~~
 {: .language-python}
 
@@ -293,7 +274,7 @@ matplotlib.pyplot.show()
 
 ## Make Your Own Plot
 
-Create a plot showing the standard deviation (`numpy.std`)
+Create a plot showing the standard deviation (`np.std`)
 of the inflammation data for each day across all patients.
 
 :::::::::::::::  solution
@@ -301,8 +282,8 @@ of the inflammation data for each day across all patients.
 ## Solution
 
 ~~~
-std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
-matplotlib.pyplot.show()
+std_plot = plt.plot(np.std(data, axis=0))
+plt.show()
 ~~~
 {: .language-python}
 
@@ -322,13 +303,13 @@ instead of side by side.
 ## Solution
 
 ~~~
-import numpy
-import matplotlib.pyplot
+import numpy as np
+import matplotlib.pyplot as plt
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
 # change figsize (swap width and height)
-fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
+fig = plt.figure(figsize=(3.0, 10.0))
 
 # change add_subplot (swap first two parameters)
 axes1 = fig.add_subplot(3, 1, 1)
@@ -336,17 +317,17 @@ axes2 = fig.add_subplot(3, 1, 2)
 axes3 = fig.add_subplot(3, 1, 3)
 
 axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0))
+axes1.plot(np.mean(data, axis=0))
 
 axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0))
+axes2.plot(np.amax(data, axis=0))
 
 axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
+axes3.plot(np.amin(data, axis=0))
 
 fig.tight_layout()
 
-matplotlib.pyplot.show()
+plt.show()
 ~~~
 {: .language-python}
 
