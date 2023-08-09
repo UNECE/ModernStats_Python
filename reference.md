@@ -114,6 +114,10 @@ and read inside functions.
 :   A graphical representation of two-dimensional data in which colors,
 ranging on a scale of hue or intensity, represent the data values.
 
+[Integrated Development Environment (IDE)]{#integrated-development-environment}
+:     the place where you write your code.
+
+
 [immutable]{#immutable}
 :   Unchangeable.
 The value of immutable data cannot be altered after it has been created.
