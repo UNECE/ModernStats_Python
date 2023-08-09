@@ -39,7 +39,7 @@ Let's overview some base concepts that any programmer should always keep in mind
 
 ### Documentation
 
-Have you ever returned to a task and tried to read a note that you quickly scrawled for yourself the last time you were working on it? Have you ever inherited a project from a colleague and foudn you have no idea what remains to be done?
+Have you ever returned to a task and tried to read a note that you quickly scrawled for yourself the last time you were working on it? Have you ever inherited a project from a colleague and found you have no idea what remains to be done?
 
 It can be very challenging to return to your own work or a colleague's and this goes doubly for programming. Documentation is one way we can reduce the burden on future selves and our colleagues.
 
