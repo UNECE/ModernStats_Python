@@ -1,5 +1,5 @@
 ---
-layout: reference
+title: 'Glossary'
 ---
 
 ## Glossary
@@ -116,7 +116,6 @@ ranging on a scale of hue or intensity, represent the data values.
 
 [Integrated Development Environment (IDE)]{#integrated-development-environment}
 :     the place where you write your code.
-
 
 [immutable]{#immutable}
 :   Unchangeable.
@@ -296,4 +295,5 @@ See also: [syntax error](#syntax-error).
 See also: [for loop](#for-loop).
 
 
-{% include links.md %}
+
+

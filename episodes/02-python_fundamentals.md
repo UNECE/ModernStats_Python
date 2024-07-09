@@ -226,7 +226,6 @@ weight in kilograms is now: 100.0 and weight in pounds is still: 143.0
 Since `weight_lb` doesn't "remember" where its value comes from,
 it is not updated when we change `weight_kg`.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -315,8 +314,6 @@ print(type(distance))
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Basic data types in Python include integers, strings, and floating-point numbers.
@@ -327,3 +324,5 @@ print(type(distance))
 - Built-in functions are always available to use.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

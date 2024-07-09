@@ -29,16 +29,18 @@ that can be called upon when needed.
 ## Loading data into Python
 
 To begin processing the clinical trial inflammation data, we need to load it into Python. Python can work with many different file types. Text files can be loaded into Python by using the base Python function
+
 ```python
 Open("filename.txt", "r") 
 ```
-where "r" means read only, or if you want to write to the file, you can use "w". 
+
+where "r" means read only, or if you want to write to the file, you can use "w".
 
 However, our patient data is in a csv. file, which is more commonly loaded by using a library. Python has hundreds of thousands of libraries to choose from to help carry out your work. Importing a library is like getting a piece of lab equipment out of a storage locker and setting it
 up on the bench. Libraries provide additional functionality to the basic Python package, much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
 many libraries can sometimes complicate and slow down your programs - so we only import what we
-need for each program. There are a couple common Python libraries to load (and work with data). 
+need for each program. There are a couple common Python libraries to load (and work with data).
 
 ## pandas
 
@@ -72,11 +74,12 @@ The main advantage of this approach, however, is that you only have to store one
 
 In Pandas, csv files are read as complete datasets. You do not have to explicitly open and close the dataset. All of the dataset records are assembled into a Dataframe. If your dataset has column headers in the first record then these can be used as the Dataframe column names. You can explicitly state this in the parameters to the call, but pandas is usually able to infer that there ia a header row and use it automatically.
 
-To tell Python that we'd like to start using pandas, we need to [import](../learners/reference.md#import) it: 
+To tell Python that we'd like to start using pandas, we need to [import](../learners/reference.md#import) it:
 
 ```python
 import pandas as pd
 ```
+
 Often, libraries are given an alias or a short form name, in this case pandas is given the alias "pd". Aliases for common data analysis libraries include:
 
 ```python
@@ -85,21 +88,23 @@ import numpy as np
 import matplotlib as plt
 import seaborn as sns
 ```
+
 Once we've imported the library, we can ask the library to read our data file for us:
 
 ```python
 pd.read_csv("filename.csv)
 ```
+
 pandas is a commonly used library for working with and analysing data. However, we will be working with a different package for the remainder of this course. If you would like to learn more about data manipulation and analysis using pandas, we recommend checking out [Data Analysis and Visualization with Python for Social Scientists](https://datacarpentry.org/python-socialsci/).
 
 ## numpy
 
 The second package that we will present is called
-[NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python. 
+[NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python.
 In general, you should use this library when you want to do fancy things with lots of numbers,
-especially if you have matrices or arrays. Numpy matrices are typically lighter weight with better performance, particularly when working with large datasets. 
+especially if you have matrices or arrays. Numpy matrices are typically lighter weight with better performance, particularly when working with large datasets.
 
-We will be using this package to work with our clinical trial inflammation data. 
+We will be using this package to work with our clinical trial inflammation data.
 
 To tell Python that we'd like to start using NumPy,
 we need to [import](../learners/reference.md#import) it:
@@ -107,6 +112,7 @@ we need to [import](../learners/reference.md#import) it:
 ```python
 import numpy as np
 ```
+
 Now that we have imported the library, we can ask the library (by using the alisa np) to read our data file for us:
 
 ```python
@@ -219,7 +225,6 @@ float64
 This tells us that the NumPy array's elements are
 [floating-point numbers](../learners/reference.md#floating-point-number).
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 With the following command, we can see the array's [shape](../learners/reference.md#shape):
@@ -294,7 +299,6 @@ but different from the Cartesian coordinates.
 The indices are (row, column) instead of (column, row) for the same reason,
 which can be confusing when plotting data.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Slicing data
@@ -355,6 +359,4 @@ small is:
  [ 2.  2.  1.  1.]]
 ```
 
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
