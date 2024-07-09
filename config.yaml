@@ -27,7 +27,7 @@ life_cycle: 'pre-alpha'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/fishtree-attempt/ModernStats_Python/'
+source: 'https://github.com/UNECE/ModernStats_Python'
 
 # Default branch of your lesson
 branch: 'main'
@@ -85,7 +85,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: https://preview.carpentries.org/ModernStats_Python
+url: 'https://UNECE.github.io/ModernStats_Python'
 analytics: carpentries
 lang: en
-workbench-beta: yes
