@@ -40,7 +40,13 @@
     <loc>https://UNECE.github.io/ModernStats_Python/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/aio.html</loc>
+  </url>
+  <url>
     <loc>https://UNECE.github.io/ModernStats_Python/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/images.html</loc>
   </url>
   <url>
     <loc>https://UNECE.github.io/ModernStats_Python/index.html</loc>
@@ -85,16 +91,34 @@
     <loc>https://UNECE.github.io/ModernStats_Python/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://UNECE.github.io/ModernStats_Python/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://UNECE.github.io/ModernStats_Python/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://UNECE.github.io/ModernStats_Python/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://UNECE.github.io/ModernStats_Python/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://UNECE.github.io/ModernStats_Python/key-points.html</loc>
   </url>
   <url>
     <loc>https://UNECE.github.io/ModernStats_Python/profiles.html</loc>
